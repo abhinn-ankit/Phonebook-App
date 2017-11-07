@@ -1,0 +1,26 @@
+{
+  "name": "phonebook-app",
+  "version": "1.0.0",
+  "description": "It contains contact information of people you know",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neu-mis-info6150-fall2017/extra-credit-assignment1-abhinnankit.git"
+  },
+  "keywords": [
+    "phonebook"
+  ],
+  "author": "Abhinn Ankit",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neu-mis-info6150-fall2017/extra-credit-assignment1-abhinnankit/issues"
+  },
+  "homepage": "https://github.com/neu-mis-info6150-fall2017/extra-credit-assignment1-abhinnankit#readme",
+  "dependencies": {
+    "connect": "^3.6.5",
+    "serve-static": "^1.13.1"
+  }
+}
