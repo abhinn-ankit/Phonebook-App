@@ -16,7 +16,7 @@ Traverse to the cloned folder and follow the steps to install the server
     3) $ npm install --save serve-static
     
  Start the server - 
- node app.js
+ $ node app.js
  
  Visit page using - 
  http://localhost:3000/index.html

@@ -21,6 +21,7 @@
   "homepage": "https://github.com/neu-mis-info6150-fall2017/extra-credit-assignment1-abhinnankit#readme",
   "dependencies": {
     "connect": "^3.6.5",
+    "normalize.css": "^7.0.0",
     "serve-static": "^1.13.1"
   }
 }

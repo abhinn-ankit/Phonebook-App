@@ -1,0 +1,12 @@
+
+/* Navbar element variables */
+
+// All color properties
+$navbar-background-color: #3259BF;
+$navbar-brand-color: #FFFFFF;
+$navbar-search-color: lighten($navbar-background-color, 9px);
+
+// Fonts styles
+$navbar-height: 4em;
+$navbar-font-family: "Josefin Sans", sans-serif;
+$navbar-brand-size: 1.4em;

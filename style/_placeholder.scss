@@ -1,0 +1,17 @@
+//Gives padding both sides
+%padding-15 {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+// Gives left margin
+%lMargin {
+  margin-left: 25px;
+}
+
+// vertical center
+
+%flex-center {
+  display: flex;
+  align-items: center;
+}
