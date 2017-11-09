@@ -1,84 +1,228 @@
 /* Styles for navbar*/
 
 nav {
+
   height: $navbar-height;
   background-color: $navbar-background-color;
   font-family: $navbar-font-family;
-  a {
-    text-decoration: none;
-    color: $navbar-brand-color;
-  }
-  .navbar-header {
-    display: inline;
-    a {
-      font-size: $navbar-brand-size;
-      @extend %lMargin;
-    }
-  }
   @extend %flex-center;
+
   .navbar {
+
     @extend %flex-center;
     @extend %padding-15;
     justify-content: flex-start;
-    button {
+    width: 100%;
+
+    button, input {
       outline: none;
     }
-    input {
-      outline: none;
+
+    .navbar-search-btn {
+
+      display: inline-flex;
+      flex: auto;
+      p {
+
+        margin-left: 20px;
+        text-align: end;
+        flex: auto;
+
+        .search-sm {
+
+          @extend .search-btn;
+          display: inline-flex;
+          align-self: flex-end;
+          border: none;
+          background-color: transparent;
+          border-radius: 50px;
+          padding: 10px;
+          cursor: pointer;
+          color: #FFFFFF;
+          &:hover {
+            background-color: darken($navbar-background-color, 6px);
+          }
+          i {
+            font-size: $navbar-brand-size - 0.2em;
+          }
+        }
+      }
+      .small-search {
+          display: none;
+          flex: auto;
+          background-color: #FFFFFF;
+          &::placeholder {
+
+            color: #8FA4DC;
+            font-size: 16px;
+            font-family: "PT Sans", sans-serif;
+            font-weight: lighter;
+          }
+        border: none;
+        border-radius: 8px;
+        padding: 13px;
+        }
     }
   }
+
+  a {
+
+    text-decoration: none;
+    color: $navbar-brand-color;
+  }
+
   .navbar-toggle {
+
     background: none;
     border: none;
     background-color: transparent;
     padding: 18px;
     border-radius: 50px;
+    cursor: pointer;
+
     &:hover {
       background-color: darken($navbar-background-color, 6px);
     }
+
     .icon-bar {
+
       display: block;
       width: 19px;
       height: 2px;
       border-radius: 1px;
+      transition: 0.4s;
       background-color: #FFF;
+
       & + .icon-bar {
         margin-top: 3px;
       }
     }
   }
-  .navbar-collapse{
+
+  .navbar-header {
+
+    display: inline-flex;
+    a {
+
+      font-size: $navbar-brand-size;
+      @extend %lMargin;
+      align-self: center;
+    }
+
+    .change {
+      .bar1 {
+        -webkit-transform: rotate(-45deg) translate(-2px, 3px);
+        transform: rotate(-45deg) translate(-2px, 3px);
+      }
+      .bar2 {
+        opacity: 0;
+      }
+      .bar3 {
+        -webkit-transform: rotate(45deg) translate(-4px, -5px);
+        transform: rotate(45deg) translate(-4px, -5px);
+      }
+    }
+  }
+
+  .navbar-collapse {
+
     display: inline-block;
     @extend %lMargin;
+
     form {
-      @extend %lMargin;
       justify-content: flex-start;
-      display: inline-flex;
+      display: none;
+
       .search-btn {
         border: none;
-        border-radius: unset;
+        border-radius: 0px 8px 8px 0px;
         cursor: pointer;
         background-color: $navbar-search-color;
         @extend %padding-15;
+
+        &:hover {
+          background-color: darken($navbar-background-color, 6px);
+        }
       }
     }
+
     i {
       color: #FFFFFF;
-      font-size: $navbar-brand-size;
+      font-size: $navbar-brand-size - 0.2em;
     }
+
+    .search-icon-darken {
+
+      border: 1px solid white;
+      border-radius: 50px;
+      padding: 8px;
+    }
+
     .input-field {
       input {
+
         @extend %lMargin;
-        width: 720px;
+        width: 192px;
         padding: 13px;
         border: none;
         &::placeholder {
+
           color: #8FA4DC;
           font-size: 16px;
           font-family: "PT Sans", sans-serif;
           font-weight: lighter;
         }
+
+        border-radius: 8px 0px 0px 8px;
         background-color: $navbar-search-color;
+      }
+    }
+  }
+
+  .navbar-userinfo {
+
+    color: $navbar-brand-color;
+    p {
+      text-align: end;
+      display: none;
+      button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        color: $navbar-brand-color;
+        padding: 10px;
+
+        &:hover {
+          box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+        }
+      }
+    }
+  }
+
+  .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: $navbar-height;
+    left: 0;
+    border-right: 1px solid lightgrey;
+    background-color: lighten(#DCDCDC, 10%);
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.2s;
+
+    a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: $navbar-brand-size - 0.4em;
+      color: #3F3F3F;
+      display: block;
+      transition: 0.2s linear;
+
+      &:hover {
+        color: #000000;
+        border: 1px solid lightgrey;
       }
     }
   }

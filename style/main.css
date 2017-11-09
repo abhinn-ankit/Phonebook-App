@@ -1,11 +1,11 @@
 /* Getting fonts from google server */
 @import url(https://fonts.googleapis.com/css?family=Lato|Roboto|PT+Sans|Josefin+Sans);
 /* Navbar element variables */
-.container, .container-fluid, nav .navbar, nav .navbar-collapse form .search-btn {
+.container, .container-fluid, nav .navbar, nav .navbar-collapse form .search-btn, nav .navbar-collapse form .navbar .navbar-search-btn p .search-sm, nav .navbar .navbar-search-btn p .navbar-collapse form .search-sm {
   padding-left: 15px;
   padding-right: 15px; }
 
-nav .navbar-header a, nav .navbar-collapse, nav .navbar-collapse form, nav .navbar-collapse .input-field input {
+nav .navbar-header a, nav .navbar-collapse, nav .navbar-collapse .input-field input {
   margin-left: 25px; }
 
 nav, nav .navbar {
@@ -32,25 +32,53 @@ nav {
   height: 4em;
   background-color: #3259BF;
   font-family: "Josefin Sans", sans-serif; }
+  nav .navbar {
+    justify-content: flex-start;
+    width: 100%; }
+    nav .navbar button, nav .navbar input {
+      outline: none; }
+    nav .navbar .navbar-search-btn {
+      display: inline-flex;
+      flex: auto; }
+      nav .navbar .navbar-search-btn p {
+        margin-left: 20px;
+        text-align: end;
+        flex: auto; }
+        nav .navbar .navbar-search-btn p .search-sm {
+          display: inline-flex;
+          align-self: flex-end;
+          border: none;
+          background-color: transparent;
+          border-radius: 50px;
+          padding: 10px;
+          cursor: pointer;
+          color: #FFFFFF; }
+          nav .navbar .navbar-search-btn p .search-sm:hover {
+            background-color: #2c4ea7; }
+          nav .navbar .navbar-search-btn p .search-sm i {
+            font-size: 1.2em; }
+      nav .navbar .navbar-search-btn .small-search {
+        display: none;
+        flex: auto;
+        background-color: #FFFFFF;
+        border: none;
+        border-radius: 8px;
+        padding: 13px; }
+        nav .navbar .navbar-search-btn .small-search::placeholder {
+          color: #8FA4DC;
+          font-size: 16px;
+          font-family: "PT Sans", sans-serif;
+          font-weight: lighter; }
   nav a {
     text-decoration: none;
     color: #FFFFFF; }
-  nav .navbar-header {
-    display: inline; }
-    nav .navbar-header a {
-      font-size: 1.4em; }
-  nav .navbar {
-    justify-content: flex-start; }
-    nav .navbar button {
-      outline: none; }
-    nav .navbar input {
-      outline: none; }
   nav .navbar-toggle {
     background: none;
     border: none;
     background-color: transparent;
     padding: 18px;
-    border-radius: 50px; }
+    border-radius: 50px;
+    cursor: pointer; }
     nav .navbar-toggle:hover {
       background-color: #2c4ea7; }
     nav .navbar-toggle .icon-bar {
@@ -58,29 +86,100 @@ nav {
       width: 19px;
       height: 2px;
       border-radius: 1px;
+      transition: 0.4s;
       background-color: #FFF; }
       nav .navbar-toggle .icon-bar + .icon-bar {
         margin-top: 3px; }
+  nav .navbar-header {
+    display: inline-flex; }
+    nav .navbar-header a {
+      font-size: 1.4em;
+      align-self: center; }
+    nav .navbar-header .change .bar1 {
+      -webkit-transform: rotate(-45deg) translate(-2px, 3px);
+      transform: rotate(-45deg) translate(-2px, 3px); }
+    nav .navbar-header .change .bar2 {
+      opacity: 0; }
+    nav .navbar-header .change .bar3 {
+      -webkit-transform: rotate(45deg) translate(-4px, -5px);
+      transform: rotate(45deg) translate(-4px, -5px); }
   nav .navbar-collapse {
     display: inline-block; }
     nav .navbar-collapse form {
       justify-content: flex-start;
-      display: inline-flex; }
-      nav .navbar-collapse form .search-btn {
+      display: none; }
+      nav .navbar-collapse form .search-btn, nav .navbar-collapse form .navbar .navbar-search-btn p .search-sm, nav .navbar .navbar-search-btn p .navbar-collapse form .search-sm {
         border: none;
-        border-radius: unset;
+        border-radius: 0px 8px 8px 0px;
         cursor: pointer;
         background-color: #4e72d1; }
+        nav .navbar-collapse form .search-btn:hover, nav .navbar-collapse form .navbar .navbar-search-btn p .search-sm:hover, nav .navbar .navbar-search-btn p .navbar-collapse form .search-sm:hover {
+          background-color: #2c4ea7; }
     nav .navbar-collapse i {
       color: #FFFFFF;
-      font-size: 1.4em; }
+      font-size: 1.2em; }
+    nav .navbar-collapse .search-icon-darken {
+      border: 1px solid white;
+      border-radius: 50px;
+      padding: 8px; }
     nav .navbar-collapse .input-field input {
-      width: 720px;
+      width: 192px;
       padding: 13px;
       border: none;
+      border-radius: 8px 0px 0px 8px;
       background-color: #4e72d1; }
       nav .navbar-collapse .input-field input::placeholder {
         color: #8FA4DC;
         font-size: 16px;
         font-family: "PT Sans", sans-serif;
         font-weight: lighter; }
+  nav .navbar-userinfo {
+    color: #FFFFFF; }
+    nav .navbar-userinfo p {
+      text-align: end;
+      display: none; }
+      nav .navbar-userinfo p button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        color: #FFFFFF;
+        padding: 10px; }
+        nav .navbar-userinfo p button:hover {
+          box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19); }
+  nav .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 4em;
+    left: 0;
+    border-right: 1px solid lightgrey;
+    background-color: #f6f6f6;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.2s; }
+    nav .sidenav a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 1em;
+      color: #3F3F3F;
+      display: block;
+      transition: 0.2s linear; }
+      nav .sidenav a:hover {
+        color: #000000;
+        border: 1px solid lightgrey; }
+
+/* Media queires */
+@media screen and (min-width: 800px) {
+  nav .navbar-collapse .search-sm {
+    display: none !important; }
+  nav .navbar-collapse .search-form {
+    display: inline-flex; }
+  nav .search-form {
+    display: inline-flex; }
+  nav .navbar .navbar-search-btn {
+    display: none; }
+  nav .navbar .navbar-userinfo {
+    flex: auto; }
+    nav .navbar .navbar-userinfo p {
+      display: block; } }

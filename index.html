@@ -14,11 +14,11 @@
       <div class="navbar">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
+            <span class="icon-bar bar1"></span>
+            <span class="icon-bar bar2"></span>
+            <span class="icon-bar bar3"></span>
           </button>
-          <a href="#">Kontakts</a>
+          <a href="#">Phonebook</a>
         </div>
         <div class="navbar-collapse">
           <form class="search-form" method="get">
@@ -28,11 +28,24 @@
             <button type="button" class="search-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
           </form>
         </div>
+        <div class="navbar-search-btn">
+          <input type="text" name="search" placeholder="Search Contacts" class="small-search">
+          <p><button type="button" class="search-sm"><i class="fa fa-search" aria-hidden="true"></i></button></p>
+        </div>
+        <div class="navbar-userinfo">
+          <p>Welcome, <button>(Please enter your name)</button></p>
+        </div>
+      </div>
+      <div id="mySidenav" class="sidenav">
+        <a href="#">Contacts</a>
+        <a href="#">Add a New Contact</a>
       </div>
     </nav>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+
+    <!-- jScripts  -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"
             integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
             crossorigin="anonymous"></script>
+    <script src="js/script.js" defer></script>
   </body>
 </html>

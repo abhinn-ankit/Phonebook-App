@@ -1,0 +1,33 @@
+
+/* Media queires */
+
+@media screen and (min-width: 800px) {
+  nav {
+    .navbar-collapse {
+      .search-sm {
+        display: none !important;
+      }
+      .search-form {
+        display: inline-flex;
+      }
+    }
+    .search-form {
+      display: inline-flex;
+    }
+    .navbar {
+      .navbar-search-btn {
+        display: none;
+      }
+      .navbar-userinfo {
+        flex: auto;
+        p {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+
+}
