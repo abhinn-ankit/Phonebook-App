@@ -5,7 +5,7 @@
   padding-left: 15px;
   padding-right: 15px; }
 
-nav .navbar-header a, nav .navbar-collapse, nav .navbar-collapse .input-field input {
+nav .navbar-collapse, nav .navbar-collapse .input-field input {
   margin-left: 25px; }
 
 nav, nav .navbar {
@@ -46,7 +46,6 @@ nav {
         flex: auto; }
         nav .navbar .navbar-search-btn p .search-sm {
           display: inline-flex;
-          align-self: flex-end;
           border: none;
           background-color: transparent;
           border-radius: 50px;
@@ -94,6 +93,7 @@ nav {
     display: inline-flex; }
     nav .navbar-header a {
       font-size: 1.4em;
+      margin-left: 15px;
       align-self: center; }
     nav .navbar-header .change .bar1 {
       -webkit-transform: rotate(-45deg) translate(-2px, 3px);
@@ -179,6 +179,8 @@ nav {
     display: inline-flex; }
   nav .navbar .navbar-search-btn {
     display: none; }
+  nav .navbar .navbar-header a {
+    margin-left: 25px; }
   nav .navbar .navbar-userinfo {
     flex: auto; }
     nav .navbar .navbar-userinfo p {

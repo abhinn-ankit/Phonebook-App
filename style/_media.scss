@@ -18,6 +18,11 @@
       .navbar-search-btn {
         display: none;
       }
+      .navbar-header {
+        a {
+          margin-left: 25px;
+        }
+      }
       .navbar-userinfo {
         flex: auto;
         p {
