@@ -1,7 +1,7 @@
 /* SideBar toggle */
 const NAVHEADER = document.querySelector(".navbar-header");
 const TOGGLE = document.querySelector(".navbar-toggle");
-const SEARCHBAR = document.querySelector(".input-field > input");
+const SEARCHBAR = document.querySelector(".input-field input");
 const USERNAMEBTN = document.querySelector(".navbar-userinfo button");
 const SIDENAV = document.querySelector("#mySidenav");
 const SMALLSEARCHBTN = document.querySelector(".search-sm");

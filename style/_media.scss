@@ -32,3 +32,17 @@
     }
   }
 }
+
+@media screen and (max-width: 799px) {
+  section {
+    .contacts {
+      .contact-section {
+        .contact-info {
+          .number {
+            display: none !important;
+          }
+        }
+      }
+    }
+  }
+}

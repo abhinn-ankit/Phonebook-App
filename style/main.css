@@ -36,7 +36,7 @@ body {
   font-family: "PT Sans", sans-serif;
   line-height: 1.5; }
 
-body, p, ul, h1 {
+body, p, ul, h1, h2 {
   margin: 0; }
 
 .container {
@@ -169,6 +169,46 @@ nav {
         color: #000000;
         border: 1px solid lightgrey; }
 
+/* Contacts section */
+section .contacts {
+  margin-top: 35px; }
+  section .contacts .contact-section {
+    display: flex;
+    justify-content: flex-start;
+    border-bottom: 1px solid slategray;
+    margin-bottom: 10px;
+    padding-bottom: 10px; }
+    section .contacts .contact-section .letters {
+      display: inline-flex;
+      color: #778899;
+      margin-left: 30px;
+      font-size: 24px;
+      margin-top: 4px; }
+    section .contacts .contact-section .contact-wrapper {
+      display: flex;
+      flex: auto;
+      flex-direction: column; }
+      section .contacts .contact-section .contact-wrapper .contact-info {
+        margin-left: 70px;
+        display: inline-flex;
+        flex: auto;
+        border: none;
+        padding: 11px;
+        outline: none;
+        cursor: pointer;
+        transition: 0.2s ease-in;
+        background: none; }
+        section .contacts .contact-section .contact-wrapper .contact-info:hover {
+          background-color: #F5F5F5;
+          border: 1px outset lightgrey; }
+        section .contacts .contact-section .contact-wrapper .contact-info .name {
+          text-align: left;
+          width: 50%; }
+        section .contacts .contact-section .contact-wrapper .contact-info .number {
+          display: inline-flex;
+          text-align: left;
+          flex: auto; }
+
 /* Media queires */
 @media screen and (min-width: 800px) {
   nav .navbar-collapse .search-sm {
@@ -185,3 +225,7 @@ nav {
     flex: auto; }
     nav .navbar .navbar-userinfo p {
       display: block; } }
+
+@media screen and (max-width: 799px) {
+  section .contacts .contact-section .contact-info .number {
+    display: none !important; } }

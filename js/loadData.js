@@ -16,12 +16,11 @@ function contactObject( firstName, lastName, birthday, address, phoneNumber, ima
 
 var data = new Array();
 
-
 function loadJSON(callback){
     var req=new XMLHttpRequest();
     req.overrideMimeType("application/json");
     req.open('GET','./json/contacts.json',true);
-    req.onload = function(){
+    req.onreadystatechange = function(){
         if(req.readyState == 4 && req.status == "200"){
             callback(req.responseText);
         }
@@ -68,32 +67,36 @@ function loadContacts() {
     let i = 0;
     let firstChar = "9";
     do {
-        let contactDiv = document.createElement("div");
-        contactDiv.classList.add("contact-section");
-
         if( firstChar.toUpperCase() != data[i].nameChar.toUpperCase() ) {
+            var contactDiv = document.createElement("div");
+            contactDiv.classList.add("contact-section");
             firstChar = data[i].nameChar;
             let letter = document.createElement("h2");
             letter.classList.add("letters");
             letter.append(firstChar);
             contactDiv.appendChild(letter);
+            var contactWrapper = document.createElement("div");
+            contactWrapper.classList.add("contact-wrapper");
+            contactDiv.appendChild(contactWrapper);
         }
-        let contactInfoDiv = document.createElement("div");
+
+        let contactInfoDiv = document.createElement("button");
         contactInfoDiv.classList.add("contact-info");
 
-        let nameDiv = document.createElement("div");
+        let nameDiv = document.createElement("span");
         nameDiv.classList.add("name");
         let nameDivText = document.createTextNode( data[i].contactInfo.lastName + ", " + data[i].contactInfo.firstName );
         nameDiv.appendChild(nameDivText);
 
-        let num = document.createElement("div");
+        let num = document.createElement("span");
         num.classList.add("number");
         num.append(data[i].contactInfo.phoneNumber);
 
         contactInfoDiv.appendChild(nameDiv);
         contactInfoDiv.appendChild(num);
 
-        contactDiv.appendChild(contactInfoDiv);
+        contactWrapper.appendChild(contactInfoDiv);
+        contactDiv.appendChild(contactWrapper);
 
         div.appendChild(contactDiv);
 
