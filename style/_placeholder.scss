@@ -15,3 +15,24 @@
   display: flex;
   align-items: center;
 }
+
+%search-bar {
+
+  border: none;
+  border-radius: 8px;
+  padding: 13px;
+  background-color: $navbar-search-color;
+  &::placeholder {
+
+    color: lighten(#919fad, 20%);
+    font-size: 16px;
+    font-family: "PT Sans", sans-serif;
+    font-weight: lighter;
+  }
+  &:focus {
+    &::placeholder {
+      color: #919fad;
+    }
+    background-color: #FFFFFF;
+  }
+}

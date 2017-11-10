@@ -7,9 +7,10 @@ const SIDENAV = document.querySelector("#mySidenav");
 const SMALLSEARCHBTN = document.querySelector(".search-sm");
 const SMALLSRCHBTN = document.querySelector(".small-search");
 const SMALLSRCHP = document.querySelector(".navbar-search-btn p");
-
+const sideNavLinks = document.querySelectorAll("#mySidenav a");
 
 const searchBarColor = SEARCHBAR.style.backgroundColor;
+
 var openNavbar = true;
 var userName;
 
@@ -27,13 +28,11 @@ TOGGLE.addEventListener("click", function () {
 function openNav() {
     if(window.innerWidth > 800) {
         SIDENAV.style.width = "250px";
-        //document.getElementById("main").style.marginLeft = "250px";
+        document.querySelector(".main").style.marginLeft = "250px";
     }
     else {
         SIDENAV.style.width = window.innerWidth + "px";
-        // noinspection JSAnnotator
-        let sideNavLinks = document.querySelectorAll("#mySidenav a");
-        // noinspection JSAnnotator
+
         for (let i = 0 ; i < sideNavLinks.length ; i++ ) {
             sideNavLinks[i].style.textAlign = "center";
         }
@@ -43,7 +42,7 @@ function openNav() {
 
 function closeNav() {
     SIDENAV.style.width = "0";
-    //document.getElementById("main").style.marginLeft= "0";
+    document.querySelector(".main").style.marginLeft= "0";
     TOGGLE.classList.toggle("change");
 }
 
@@ -54,6 +53,12 @@ window.addEventListener("resize", searchWidth);
 
 function searchWidth() {
     SEARCHBAR.style.width = 192 + (window.innerWidth - 800) + "px" ;
+    if( window.innerWidth >= 800 ) {
+        NAVHEADER.style.display = "inline-flex";
+    }
+    else if ( window.innerWidth < 800 && !smallSearch ) {
+        NAVHEADER.style.display = "none";
+    }
 }
 
 // Enter User name
@@ -66,50 +71,40 @@ function userNamePopUp() {
     USERNAMEBTN.innerHTML = userName;
 }
 
-// SearchBar color change
-
-SEARCHBAR.addEventListener("focus", searchWColor)
-
-function searchWColor() {
-    SEARCHBAR.style.backgroundColor = "#FFF";
-}
-
-SEARCHBAR.addEventListener("blur", searchWoColor);
-
-function searchWoColor() {
-    SEARCHBAR.style.backgroundColor = searchBarColor;
-}
-
 // Expand search bar
 
-SMALLSEARCHBTN.addEventListener("click", expandTimes);
+SMALLSEARCHBTN.addEventListener("click", expandSearchBar);
 var smallSearch = true;
 
-function expandTimes() {
+function expandSearchBar() {
     if(smallSearch) {
         SMALLSEARCHBTN.innerHTML = "<i class=\"fa fa-times\" aria-hidden=\"true\"></i>";
+        SMALLSEARCHBTN.style.marginTop = "3px";
         smallSearch = false;
         SMALLSRCHBTN.style.display = "inline-flex";
         NAVHEADER.style.display = "none";
         SMALLSRCHP.style.flex = "0 1 auto";
     }
     else {
-        smallSearch = true;
-        SMALLSEARCHBTN.innerHTML = "<i class=\"fa fa-search\" aria-hidden=\"true\"></i>";
-        SMALLSRCHBTN.style.display = "none";
-        NAVHEADER.style.display = "inline-flex";
-        SMALLSRCHP.style.flex = "auto";
+        minimizeSearchBar();
     }
 
 }
 
-SMALLSEARCHBTN.addEventListener("blur", expandSearch);
+SMALLSRCHBTN.addEventListener("blur", keepSearchBar);
 
-function expandSearch(){
+function keepSearchBar(e) {
+
+    minimizeSearchBar();
+}
+
+function minimizeSearchBar(){
     SMALLSEARCHBTN.innerHTML = "<i class=\"fa fa-search\" aria-hidden=\"true\"></i>";
     smallSearch = true;
     SMALLSRCHBTN.style.display = "none";
     NAVHEADER.style.display = "inline-flex";
     SMALLSRCHP.style.flex = "auto";
+    SMALLSEARCHBTN.style.marginTop = "0px";
+
 }
-/*  */
+

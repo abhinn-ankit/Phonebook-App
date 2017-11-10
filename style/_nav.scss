@@ -47,20 +47,10 @@ nav {
         }
       }
       .small-search {
-          display: none;
-          flex: auto;
-          background-color: #FFFFFF;
-          &::placeholder {
-
-            color: #8FA4DC;
-            font-size: 16px;
-            font-family: "PT Sans", sans-serif;
-            font-weight: lighter;
-          }
-        border: none;
-        border-radius: 8px;
-        padding: 13px;
-        }
+        display: none;
+        flex: auto;
+        @extend %search-bar;
+      }
     }
   }
 
@@ -160,20 +150,14 @@ nav {
     .input-field {
       input {
 
+        @extend %search-bar;
         @extend %lMargin;
         width: 192px;
-        padding: 13px;
-        border: none;
-        &::placeholder {
-
-          color: #8FA4DC;
-          font-size: 16px;
-          font-family: "PT Sans", sans-serif;
-          font-weight: lighter;
-        }
-
         border-radius: 8px 0px 0px 8px;
-        background-color: $navbar-search-color;
+
+        &::placeholder {
+          color: #f6f6f6;
+        }
       }
     }
   }
@@ -209,7 +193,7 @@ nav {
     background-color: lighten(#DCDCDC, 10%);
     overflow-x: hidden;
     padding-top: 60px;
-    transition: 0.2s;
+    transition: 0.1s;
 
     a {
       padding: 8px 8px 8px 32px;
