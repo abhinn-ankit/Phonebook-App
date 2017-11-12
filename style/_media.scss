@@ -34,13 +34,26 @@
 }
 
 @media screen and (max-width: 799px) {
-  section {
+  .main {
     .contacts {
       .contact-section {
         .contact-info {
           .number {
             display: none !important;
           }
+        }
+      }
+    }
+  }
+  .contact-box {
+    .contact-name {
+      width: 100%;
+    }
+    .contact-pane {
+      width: 100%;
+      .contact-details {
+        .edit-contact {
+          width: 100%;
         }
       }
     }

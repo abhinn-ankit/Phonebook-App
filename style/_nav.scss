@@ -1,9 +1,8 @@
 /* Styles for navbar*/
 
 nav {
-
   height: $navbar-height;
-  background-color: $navbar-background-color;
+  background-color: #000000;
   font-family: $navbar-font-family;
   @extend %flex-center;
 
@@ -185,8 +184,8 @@ nav {
   .sidenav {
     height: 100%;
     width: 0;
-    position: fixed;
-    z-index: 1;
+    position: absolute;
+    z-index: 2;
     top: $navbar-height;
     left: 0;
     border-right: 1px solid lightgrey;

@@ -37,14 +37,54 @@
         </div>
       </div>
       <div id="mySidenav" class="sidenav">
-        <a href="#">Contacts</a>
-        <a href="#">Add a New Contact</a>
+        <a href="#" class="sidenav-contact">Contacts</a>
+        <a href="#" class="add-contact">Add a New Contact</a>
       </div>
     </nav>
     <section class = "main">
       <div class="container-fluid">
         <div class="contacts">
-
+        </div>
+      </div>
+    </section>
+    <section class="contact-box container-fluid">
+      <div class="contact-name">
+        <img src="./images/I0pBwxh6_400x400.jpg">
+        <p class="full-name"></p>
+        <div class="close-pane">
+          <button type="button"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+          <button type="button"><i class="fa fa-times" aria-hidden="true"></i></button>
+        </div>
+      </div>
+      <div class="contact-pane">
+        <p>Contact details</p>
+        <div class="contact-details">
+          <form class="edit-contact" method="get">
+            <div class="form-block">
+              <label>First Name:</label>
+              <p><input type="text" id="fName" class="contact-input-field" disabled="true" pattern="[A-Za-z]+" required></p>
+            </div>
+            <div class="form-block">
+              <label>Last Name:</label>
+              <p><input type="text" id="lName" class="contact-input-field" disabled="true" required pattern="[A-Za-z]+"></p>
+            </div>
+            <div  class="form-block">
+              <label>Phone Number:</label>
+              <p><input type="number" id="phone-number" class="contact-input-field" disabled="true" required pattern="[0-9]{10}"></p>
+            </div>
+            <div class="form-block">
+              <label>Birthday:</label>
+              <p><input type="date" id="birthday" class="contact-input-field" disabled="true"></p>
+            </div>
+            <div class="form-block">
+              <label>Address:</label>
+              <p><textarea type="text" id="address" rows="4" class="contact-input-field" disabled="true"></textarea></p>
+            </div>
+            <div>
+              <button type="button" class="form-button">Finish</button>
+              <button type="button" class="form-button">Cancel</button>
+            </div>
+          </form>
         </div>
       </div>
     </section>
@@ -55,5 +95,6 @@
     <script src="./js/loadData.js"></script>
     <script src="./js/script.js"></script>
     <script src="./js/search.js" defer></script>
+    <script src="./js/contactPopUp.js"></script>
   </body>
 </html>

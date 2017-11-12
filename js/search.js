@@ -19,7 +19,7 @@ function searchContact(current) {
     for (let i = 0; i < contactInfo.length; i++) {
         let name = contactInfo[i].children[0];
         console.log(name);
-        if ( (data[i].contactInfo.lastName.toUpperCase() + "/\s\s+/ " + data[i].contactInfo.firstName.toUpperCase()).indexOf(filter) > -1) {
+        if ( (data[i].contactInfo.lastName.toUpperCase() + " " + data[i].contactInfo.firstName.toUpperCase()).indexOf(filter) > -1) {
             contactInfo[i].style.display = "inline-flex";
             flag.push(true);
         } else {

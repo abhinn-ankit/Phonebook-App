@@ -3,42 +3,42 @@
     {
       "first_name": "Jeanette",
       "last_name": "Penddreth",
-      "birthday": "06/17/1989",
+      "birthday": "1989-06-17",
       "Address": "26.58.193.2",
       "phoneNumber": "9763628198",
-      "imageUrl": ""
+      "imageUrl": "https:\/\/secure.gravatar.com\/avatar\/898b34b5f6bc70e42372e8430b4ac352"
     },
     {
       "first_name": "Giavani",
       "last_name": "Frediani",
-      "birthday": "01/12/1983",
+      "birthday": "1983-12-01",
       "Address": "229.179.4.212",
       "phoneNumber": "9764718898",
-      "imageUrl": ""
+      "imageUrl": "https:\/\/secure.gravatar.com\/avatar\/898b34b5f6bc70e42372e8430b4ac352"
     },
     {
       "first_name": "Noell",
       "last_name": "Bea",
-      "birthday": "12/28/1972",
+      "birthday": "1972-12-28",
       "Address": "180.66.162.255",
       "phoneNumber": "6281768198",
-      "imageUrl": ""
+      "imageUrl": "https:\/\/secure.gravatar.com\/avatar\/898b34b5f6bc70e42372e8430b4ac352"
     },
     {
       "first_name": "Willard",
       "last_name": "Valek",
-      "birthday": "07/14/1992",
+      "birthday": "1992-07-14",
       "Address": "67.76.188.26",
       "phoneNumber": "7387338198",
-      "imageUrl": ""
+      "imageUrl": "https:\/\/secure.gravatar.com\/avatar\/898b34b5f6bc70e42372e8430b4ac352"
     },
     {
       "first_name": "Neel",
       "last_name": "Boa",
-      "birthday": "01/13/1972",
+      "birthday": "1972-01-13",
       "Address": "180.66.162.255",
       "phoneNumber": "6835392198",
-      "imageUrl": ""
+      "imageUrl": "https:\/\/secure.gravatar.com\/avatar\/898b34b5f6bc70e42372e8430b4ac352"
     }
   ]
 }

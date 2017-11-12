@@ -45,7 +45,7 @@ body, p, ul, h1, h2 {
 /* Styles for navbar*/
 nav {
   height: 4em;
-  background-color: #778899;
+  background-color: #000000;
   font-family: "Josefin Sans", sans-serif; }
   nav .navbar {
     justify-content: flex-start;
@@ -149,8 +149,8 @@ nav {
   nav .sidenav {
     height: 100%;
     width: 0;
-    position: fixed;
-    z-index: 1;
+    position: absolute;
+    z-index: 2;
     top: 4em;
     left: 0;
     border-right: 1px solid lightgrey;
@@ -170,25 +170,25 @@ nav {
         border: 1px solid lightgrey; }
 
 /* Contacts section */
-section .contacts {
+.main .contacts {
   margin-top: 35px; }
-  section .contacts .contact-section {
+  .main .contacts .contact-section {
     display: flex;
     justify-content: flex-start;
     border-bottom: 1px solid slategray;
     margin-bottom: 10px;
     padding-bottom: 10px; }
-    section .contacts .contact-section .letters {
+    .main .contacts .contact-section .letters {
       display: inline-flex;
       color: #778899;
       margin-left: 30px;
       font-size: 24px;
       margin-top: 4px; }
-    section .contacts .contact-section .contact-wrapper {
+    .main .contacts .contact-section .contact-wrapper {
       display: flex;
       flex: auto;
       flex-direction: column; }
-      section .contacts .contact-section .contact-wrapper .contact-info {
+      .main .contacts .contact-section .contact-wrapper .contact-info {
         margin-left: 70px;
         display: inline-flex;
         flex: auto;
@@ -198,16 +198,101 @@ section .contacts {
         cursor: pointer;
         transition: 0.2s ease-in;
         background: none; }
-        section .contacts .contact-section .contact-wrapper .contact-info:hover {
-          background-color: #F5F5F5;
-          border: 1px outset lightgrey; }
-        section .contacts .contact-section .contact-wrapper .contact-info .name {
+        .main .contacts .contact-section .contact-wrapper .contact-info:hover {
+          border: 1px solid lightgrey;
+          border-left: 0;
+          border-radius: 0; }
+        .main .contacts .contact-section .contact-wrapper .contact-info .name {
           text-align: left;
           width: 50%; }
-        section .contacts .contact-section .contact-wrapper .contact-info .number {
+        .main .contacts .contact-section .contact-wrapper .contact-info .number {
           display: inline-flex;
           text-align: left;
           flex: auto; }
+
+/* Contact - box */
+.contact-box {
+  display: none;
+  position: absolute;
+  top: 4em;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  overflow: auto;
+  z-index: 1; }
+  .contact-box .contact-name {
+    display: flex;
+    font-size: 26px;
+    height: 100px;
+    justify-content: right;
+    width: 80%;
+    margin: auto;
+    margin-top: 30px; }
+    .contact-box .contact-name img {
+      border-radius: 50%;
+      outline: none;
+      height: 100px;
+      width: 100px; }
+    .contact-box .contact-name .close-pane {
+      flex: 0 0  auto;
+      display: inline-flex;
+      align-items: center;
+      margin-right: 10px; }
+      .contact-box .contact-name .close-pane button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        margin-right: 10px;
+        outline: none; }
+        .contact-box .contact-name .close-pane button i {
+          font-size: 20px;
+          color: #a9a9a9; }
+          .contact-box .contact-name .close-pane button i:hover {
+            color: #000000; }
+    .contact-box .contact-name .full-name {
+      display: inline-flex;
+      align-self: center;
+      margin-left: 30px;
+      flex: auto; }
+    .contact-box .contact-name ::after {
+      clear: both; }
+  .contact-box .contact-pane {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 30px; }
+    .contact-box .contact-pane button {
+      outline: none; }
+    .contact-box .contact-pane > p {
+      flex: auto;
+      font-size: 22px;
+      margin-bottom: 40px;
+      text-align: center;
+      font-weight: 600; }
+    .contact-box .contact-pane .contact-details {
+      display: flex; }
+      .contact-box .contact-pane .contact-details .edit-contact {
+        width: 90%;
+        margin: auto; }
+        .contact-box .contact-pane .contact-details .edit-contact .form-block {
+          display: inline-flex;
+          width: 100%; }
+          .contact-box .contact-pane .contact-details .edit-contact .form-block p {
+            margin-bottom: 25px;
+            flex: auto; }
+          .contact-box .contact-pane .contact-details .edit-contact .form-block label {
+            width: 40%; }
+          .contact-box .contact-pane .contact-details .edit-contact .form-block .contact-input-field {
+            flex: 1 1 auto;
+            width: 100%; }
+          .contact-box .contact-pane .contact-details .edit-contact .form-block textarea {
+            resize: none; }
+        .contact-box .contact-pane .contact-details .edit-contact div:last-child {
+          text-align: end; }
+          .contact-box .contact-pane .contact-details .edit-contact div:last-child .form-button {
+            margin-right: 20px;
+            background: none;
+            padding: 10px;
+            cursor: pointer; }
 
 /* Media queires */
 @media screen and (min-width: 800px) {
@@ -227,5 +312,11 @@ section .contacts {
       display: block; } }
 
 @media screen and (max-width: 799px) {
-  section .contacts .contact-section .contact-info .number {
-    display: none !important; } }
+  .main .contacts .contact-section .contact-info .number {
+    display: none !important; }
+  .contact-box .contact-name {
+    width: 100%; }
+  .contact-box .contact-pane {
+    width: 100%; }
+    .contact-box .contact-pane .contact-details .edit-contact {
+      width: 100%; } }

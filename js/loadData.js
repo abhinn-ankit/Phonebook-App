@@ -15,6 +15,7 @@ function contactObject( firstName, lastName, birthday, address, phoneNumber, ima
 }
 
 var data = new Array();
+var contInfo;
 
 function loadJSON(callback){
     var req=new XMLHttpRequest();
@@ -41,25 +42,19 @@ loadJSON(function(response) {
         data[i] = lexicalObjects01;
     }
 
-    // Sort Array
-
-    function sortAsc(a , b) {
-        if (a.contactInfo.lastName.toUpperCase() < b.contactInfo.lastName.toUpperCase())
-            return -1;
-        else if (a.contactInfo.lastName.toUpperCase() > b.contactInfo.lastName.toUpperCase())
-            return 1;
-        return 0;
-    }
-
     data.sort(sortAsc);
-    console.log(data);
-
 
     loadContacts();
 
-
 });
 
+function sortAsc(a , b) {
+    if (a.contactInfo.lastName.toUpperCase() < b.contactInfo.lastName.toUpperCase())
+        return -1;
+    else if (a.contactInfo.lastName.toUpperCase() > b.contactInfo.lastName.toUpperCase())
+        return 1;
+    return 0;
+}
 
 function loadContacts() {
 
@@ -102,6 +97,11 @@ function loadContacts() {
 
         i++;
     } while( i < data.length );
+
+    contInfo = document.querySelectorAll(".contact-info");
+    for ( let i = 0 ; i < contInfo.length ; i++ ) {
+        contInfo[i].addEventListener("click", () => contactSelect(i));
+    }
 
 }
 

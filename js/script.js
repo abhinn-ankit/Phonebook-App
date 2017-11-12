@@ -8,6 +8,7 @@ const SMALLSEARCHBTN = document.querySelector(".search-sm");
 const SMALLSRCHBTN = document.querySelector(".small-search");
 const SMALLSRCHP = document.querySelector(".navbar-search-btn p");
 const sideNavLinks = document.querySelectorAll("#mySidenav a");
+const contactBox = document.querySelector(".contact-box");
 
 const searchBarColor = SEARCHBAR.style.backgroundColor;
 
@@ -29,6 +30,8 @@ function openNav() {
     if(window.innerWidth > 800) {
         SIDENAV.style.width = "250px";
         document.querySelector(".main").style.marginLeft = "250px";
+        contactBox.style.marginLeft = "250px";
+        contactBox.style.width = "85%";
     }
     else {
         SIDENAV.style.width = window.innerWidth + "px";
@@ -43,7 +46,9 @@ function openNav() {
 function closeNav() {
     SIDENAV.style.width = "0";
     document.querySelector(".main").style.marginLeft= "0";
+    contactBox.style.marginLeft = "0";
     TOGGLE.classList.toggle("change");
+    contactBox.style.width = "100%";
 }
 
 // Calculate width
