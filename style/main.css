@@ -45,7 +45,7 @@ body, p, ul, h1, h2 {
 /* Styles for navbar*/
 nav {
   height: 4em;
-  background-color: #000000;
+  background-color: #585d5a;
   font-family: "Josefin Sans", sans-serif; }
   nav .navbar {
     justify-content: flex-start;
